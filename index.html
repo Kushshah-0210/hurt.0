@@ -10,18 +10,10 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
-:root{
---rose:#e8637a;
---cream:#fff7f5;
---wine:#8b2a3a;
---text:#3d1a22;
---muted:#9a6672;
-}
-
 body{
-background:var(--cream);
+background:#fff7f5;
 font-family:'Cormorant Garamond',serif;
-color:var(--text);
+color:#3d1a22;
 overflow-x:hidden;
 }
 
@@ -34,63 +26,101 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:2rem;
+animation:fadeIn 1.5s ease;
 }
 
 .hero-title{
-font-size:clamp(3rem,10vw,7rem);
-color:var(--wine);
-animation:fadeUp 1s ease;
+font-size:clamp(3rem,10vw,6rem);
+color:#8b2a3a;
 }
 
 .hero-subtitle{
 margin-top:1rem;
 font-style:italic;
-color:var(--muted);
-max-width:500px;
+color:#9a6672;
+}
+
+/* IMAGES */
+.images{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.images img{
+width:140px;
+height:140px;
+object-fit:cover;
+border-radius:50%;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:transform 0.4s;
+}
+
+.images img:hover{
+transform:scale(1.08);
 }
 
 /* LETTER */
-.letter-section{
-padding:4rem 1.5rem;
-display:flex;
-justify-content:center;
-}
-
-.letter-card{
-background:#fff;
+.letter{
 max-width:700px;
-padding:3rem;
+margin:60px auto;
+background:#fff;
+padding:30px;
 box-shadow:0 10px 40px rgba(0,0,0,0.08);
+animation:fadeUp 1.2s ease;
 }
 
-.letter-body p{
-margin-top:1.2rem;
+.letter p{
+margin-top:15px;
 line-height:1.8;
 }
 
-/* FINAL */
-.final-section{
-text-align:center;
-padding:4rem 1rem;
-}
-
-.forgive-btn{
-padding:1rem 2rem;
-background:var(--wine);
-color:#fff;
+/* SONG BUTTON */
+.music-btn{
+display:block;
+margin:30px auto;
+padding:12px 25px;
+background:#e8637a;
+color:white;
 border:none;
+border-radius:25px;
+font-size:1rem;
 cursor:pointer;
 }
 
-.thank-you-msg{
+/* FINAL */
+.final{
+text-align:center;
+padding:50px 20px;
+}
+
+.btn{
+padding:12px 25px;
+background:#8b2a3a;
+color:white;
+border:none;
+cursor:pointer;
+margin-top:20px;
+}
+
+.thank{
 display:none;
-margin-top:1rem;
-font-family:'Dancing Script',cursive;
-color:var(--rose);
+margin-top:15px;
+font-family:'Dancing Script';
+color:#e8637a;
+font-size:1.5rem;
+}
+
+/* animations */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 
 @keyframes fadeUp{
-from{opacity:0;transform:translateY(20px);}
+from{opacity:0;transform:translateY(30px);}
 to{opacity:1;transform:translateY(0);}
 }
 </style>
@@ -98,119 +128,110 @@ to{opacity:1;transform:translateY(0);}
 
 <body>
 
-<!-- 🎵 YOUTUBE MUSIC -->
-<iframe 
-  width="0" 
-  height="0" 
-  src="https://www.youtube.com/embed/dIVpJEKYNq4?autoplay=1&loop=1&playlist=dIVpJEKYNq4"
-  frameborder="0"
-  allow="autoplay">
-</iframe>
-
 <!-- HERO -->
 <section class="hero">
   <h1 class="hero-title">
-    I'm sorry… <br>
-    <span style="font-size:0.6em; color:#e8637a;">for hurting you</span>
+    I'm sorry…<br>
+    <span style="font-size:0.5em;color:#e8637a;">for hurting you</span>
   </h1>
+
   <p class="hero-subtitle">
     This isn't just a message… it's something from my heart.
   </p>
+
+  <!-- 🖼️ PHOTOS -->
+  <div class="images">
+    <img src="you.jpg" alt="me">
+    <img src="her.jpg" alt="her">
+  </div>
+
+  <!-- 🎵 BUTTON -->
+  <button class="music-btn" onclick="playMusic()">
+    ▶ Play this… it reminds me of you
+  </button>
 </section>
+
+<!-- 🎵 YOUTUBE -->
+<iframe id="yt" width="0" height="0"
+src="https://www.youtube.com/embed/dIVpJEKYNq4?enablejsapi=1"
+allow="autoplay">
+</iframe>
 
 <!-- LETTER -->
-<section class="letter-section">
-  <div class="letter-card">
-    <div class="letter-body">
+<div class="letter">
 
-      <p>I know "sorry" isn't enough… but I need you to hear me.</p>
+<p>I know "sorry" isn't enough… but I need you to hear me.</p>
 
-      <p>
-        I crossed a line I should have never crossed.  
-        You trusted me… and I broke that trust.
-      </p>
+<p>
+I crossed a line I should have never crossed.  
+You trusted me… and I broke that trust.
+</p>
 
-      <p>
-        I understand now that even if I didn’t mean to hurt you,  
-        the fact is… I did. And that matters more than anything.
-      </p>
+<p>
+Even if I didn’t mean to hurt you… I did.  
+And that matters more than anything.
+</p>
 
-      <p>
-        You mean everything to me.  
-        Losing your smile feels like losing something I can't replace.
-      </p>
+<p>
+You mean everything to me.  
+Losing your smile feels like losing something I can't replace.
+</p>
 
-      <!-- 💔 YOUR POWERFUL LINE -->
-      <p>
-        I was the one who promised to protect you from ever being hurt…  
-        but yesterday, the same person became the reason for your pain.  
-        I hate that it was me. I truly do.  
-        I'm so sorry, my dear love.
-      </p>
+<!-- 💔 MAIN LINE -->
+<p>
+I was the one who promised to protect you from ever being hurt…  
+but yesterday, the same person became the reason for your pain.  
+I hate that it was me. I truly do.  
+I'm so sorry, my dear love.
+</p>
 
-      <!-- 💬 HER FAVORITE LINE -->
-      <p style="
-        margin-top:20px;
-        font-size:1.2rem;
-        font-style:italic;
-        color:#e8637a;
-        text-align:center;
-      ">
-        "teri baahon mai duniya bhula de…" ❤️
-      </p>
+<!-- 💬 HER LINE -->
+<p style="text-align:center;color:#e8637a;font-style:italic;font-size:1.2rem;">
+"teri baahon mai duniya bhula de…" ❤️
+</p>
 
-      <p>
-        I'm not just saying sorry…  
-        I truly want to become better for you.
-      </p>
+<p>
+I'm not just saying sorry…  
+I truly want to become better for you.
+</p>
 
-    </div>
-  </div>
-</section>
+</div>
 
-<!-- EXTRA TOUCH -->
-<p style="
-  text-align:center;
-  margin-top:40px;
-  font-style:italic;
-  color:#8b2a3a;
-">
-  Every time I hear this song now… I think of you.
+<!-- EXTRA -->
+<p style="text-align:center;color:#8b2a3a;font-style:italic;">
+Every time I hear this song… I think of you.
 </p>
 
 <!-- FINAL -->
-<section class="final-section">
+<div class="final">
 
-  <p style="margin-bottom:20px; font-style:italic; color:#8b2a3a;">
-    I don't want to lose you… not like this.
-  </p>
+<p style="font-style:italic;color:#8b2a3a;">
+I don't want to lose you… not like this.
+</p>
 
-  <h2>Will you forgive me?</h2>
+<h2>Will you forgive me?</h2>
 
-  <p class="final-body">
-    I know I don't deserve an easy forgiveness.  
-    But I promise you — I understand now, deeply.  
-    Not just what I did… but how it made you feel.  
+<p>
+I know I don't deserve it easily…  
+but I promise I'll prove it every day.
+</p>
 
-    If you give me one chance, I won't just say sorry —  
-    I'll prove it to you every single day.
-  </p>
+<button class="btn" onclick="forgive()">Yes, I forgive you 💕</button>
 
-  <button class="forgive-btn" onclick="handleForgive()">Yes, I forgive you 💕</button>
+<p class="thank" id="thank">
+Thank you… I’ll make this right 🌹
+</p>
 
-  <p class="thank-you-msg" id="thank-you">
-    Thank you… I’ll spend every day proving this was worth it 🌹
-  </p>
-
-  <p style="margin-top:10px; font-size:0.9rem; color:#9a6672;">
-    (This page… is just a small part of how much you mean to me)
-  </p>
-
-</section>
+</div>
 
 <script>
-function handleForgive(){
-  document.getElementById("thank-you").style.display="block";
+function playMusic(){
+document.getElementById("yt").src =
+"https://www.youtube.com/embed/dIVpJEKYNq4?autoplay=1&loop=1&playlist=dIVpJEKYNq4";
+}
+
+function forgive(){
+document.getElementById("thank").style.display="block";
 }
 </script>
 
