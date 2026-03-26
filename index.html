@@ -40,26 +40,17 @@ font-style:italic;
 color:#9a6672;
 }
 
-/* IMAGES */
-.images{
-display:flex;
-justify-content:center;
-gap:20px;
+/* SINGLE IMAGE */
+.photo{
 margin-top:30px;
-flex-wrap:wrap;
 }
 
-.images img{
-width:140px;
-height:140px;
+.photo img{
+width:220px;
+height:220px;
 object-fit:cover;
-border-radius:50%;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-transition:transform 0.4s;
-}
-
-.images img:hover{
-transform:scale(1.08);
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* LETTER */
@@ -77,10 +68,9 @@ margin-top:15px;
 line-height:1.8;
 }
 
-/* SONG BUTTON */
+/* MUSIC BUTTON */
 .music-btn{
-display:block;
-margin:30px auto;
+margin-top:20px;
 padding:12px 25px;
 background:#e8637a;
 color:white;
@@ -130,32 +120,31 @@ to{opacity:1;transform:translateY(0);}
 
 <!-- HERO -->
 <section class="hero">
-  <h1 class="hero-title">
-    I'm sorry…<br>
-    <span style="font-size:0.5em;color:#e8637a;">for hurting you</span>
-  </h1>
 
-  <p class="hero-subtitle">
-    This isn't just a message… it's something from my heart.
-  </p>
+<h1 class="hero-title">
+I'm sorry…<br>
+<span style="font-size:0.5em;color:#e8637a;">for hurting you</span>
+</h1>
 
-  <!-- 🖼️ PHOTOS -->
-  <div class="images">
-    <img src="you.jpg" alt="me">
-    <img src="her.jpg" alt="her">
-  </div>
+<p class="hero-subtitle">
+This isn't just a message… it's something from my heart.
+</p>
 
-  <!-- 🎵 BUTTON -->
-  <button class="music-btn" onclick="playMusic()">
-    ▶ Play this… it reminds me of you
-  </button>
+<!-- 🖼️ SINGLE PHOTO -->
+<div class="photo">
+<img src="us.jpg" alt="us">
+</div>
+
+<!-- 🎵 MUSIC -->
+<button class="music-btn" onclick="playMusic()">
+▶ Play this… it reminds me of you
+</button>
+
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
 </section>
-
-<!-- 🎵 YOUTUBE -->
-<iframe id="yt" width="0" height="0"
-src="https://www.youtube.com/embed/dIVpJEKYNq4?enablejsapi=1"
-allow="autoplay">
-</iframe>
 
 <!-- LETTER -->
 <div class="letter">
@@ -177,7 +166,6 @@ You mean everything to me.
 Losing your smile feels like losing something I can't replace.
 </p>
 
-<!-- 💔 MAIN LINE -->
 <p>
 I was the one who promised to protect you from ever being hurt…  
 but yesterday, the same person became the reason for your pain.  
@@ -185,7 +173,6 @@ I hate that it was me. I truly do.
 I'm so sorry, my dear love.
 </p>
 
-<!-- 💬 HER LINE -->
 <p style="text-align:center;color:#e8637a;font-style:italic;font-size:1.2rem;">
 "teri baahon mai duniya bhula de…" ❤️
 </p>
@@ -197,7 +184,6 @@ I truly want to become better for you.
 
 </div>
 
-<!-- EXTRA -->
 <p style="text-align:center;color:#8b2a3a;font-style:italic;">
 Every time I hear this song… I think of you.
 </p>
@@ -226,8 +212,20 @@ Thank you… I’ll make this right 🌹
 
 <script>
 function playMusic(){
-document.getElementById("yt").src =
-"https://www.youtube.com/embed/dIVpJEKYNq4?autoplay=1&loop=1&playlist=dIVpJEKYNq4";
+let music=document.getElementById("music");
+music.volume=0;
+music.play();
+
+// smooth fade
+let v=0;
+let fade=setInterval(()=>{
+if(v<0.5){
+v+=0.02;
+music.volume=v;
+}else{
+clearInterval(fade);
+}
+},200);
 }
 
 function forgive(){
