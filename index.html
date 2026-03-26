@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry 🌹</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Dancing+Script&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+--rose:#e8637a;
+--cream:#fff7f5;
+--wine:#8b2a3a;
+--text:#3d1a22;
+--muted:#9a6672;
+}
+
+body{
+background:var(--cream);
+font-family:'Cormorant Garamond',serif;
+color:var(--text);
+overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:2rem;
+}
+
+.hero-title{
+font-size:clamp(3rem,10vw,7rem);
+color:var(--wine);
+animation:fadeUp 1s ease;
+}
+
+.hero-subtitle{
+margin-top:1rem;
+font-style:italic;
+color:var(--muted);
+max-width:500px;
+}
+
+/* LETTER */
+.letter-section{
+padding:4rem 1.5rem;
+display:flex;
+justify-content:center;
+}
+
+.letter-card{
+background:#fff;
+max-width:700px;
+padding:3rem;
+box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.letter-body p{
+margin-top:1.2rem;
+line-height:1.8;
+}
+
+/* FINAL */
+.final-section{
+text-align:center;
+padding:4rem 1rem;
+}
+
+.forgive-btn{
+padding:1rem 2rem;
+background:var(--wine);
+color:#fff;
+border:none;
+cursor:pointer;
+}
+
+.thank-you-msg{
+display:none;
+margin-top:1rem;
+font-family:'Dancing Script',cursive;
+color:var(--rose);
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 YOUTUBE MUSIC -->
+<iframe 
+  width="0" 
+  height="0" 
+  src="https://www.youtube.com/embed/dIVpJEKYNq4?autoplay=1&loop=1&playlist=dIVpJEKYNq4"
+  frameborder="0"
+  allow="autoplay">
+</iframe>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="hero-title">
+    I'm sorry… <br>
+    <span style="font-size:0.6em; color:#e8637a;">for hurting you</span>
+  </h1>
+  <p class="hero-subtitle">
+    This isn't just a message… it's something from my heart.
+  </p>
+</section>
+
+<!-- LETTER -->
+<section class="letter-section">
+  <div class="letter-card">
+    <div class="letter-body">
+
+      <p>I know "sorry" isn't enough… but I need you to hear me.</p>
+
+      <p>
+        I crossed a line I should have never crossed.  
+        You trusted me… and I broke that trust.
+      </p>
+
+      <p>
+        I understand now that even if I didn’t mean to hurt you,  
+        the fact is… I did. And that matters more than anything.
+      </p>
+
+      <p>
+        You mean everything to me.  
+        Losing your smile feels like losing something I can't replace.
+      </p>
+
+      <!-- 💔 YOUR POWERFUL LINE -->
+      <p>
+        I was the one who promised to protect you from ever being hurt…  
+        but yesterday, the same person became the reason for your pain.  
+        I hate that it was me. I truly do.  
+        I'm so sorry, my dear love.
+      </p>
+
+      <!-- 💬 HER FAVORITE LINE -->
+      <p style="
+        margin-top:20px;
+        font-size:1.2rem;
+        font-style:italic;
+        color:#e8637a;
+        text-align:center;
+      ">
+        "teri baahon mai duniya bhula de…" ❤️
+      </p>
+
+      <p>
+        I'm not just saying sorry…  
+        I truly want to become better for you.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXTRA TOUCH -->
+<p style="
+  text-align:center;
+  margin-top:40px;
+  font-style:italic;
+  color:#8b2a3a;
+">
+  Every time I hear this song now… I think of you.
+</p>
+
+<!-- FINAL -->
+<section class="final-section">
+
+  <p style="margin-bottom:20px; font-style:italic; color:#8b2a3a;">
+    I don't want to lose you… not like this.
+  </p>
+
+  <h2>Will you forgive me?</h2>
+
+  <p class="final-body">
+    I know I don't deserve an easy forgiveness.  
+    But I promise you — I understand now, deeply.  
+    Not just what I did… but how it made you feel.  
+
+    If you give me one chance, I won't just say sorry —  
+    I'll prove it to you every single day.
+  </p>
+
+  <button class="forgive-btn" onclick="handleForgive()">Yes, I forgive you 💕</button>
+
+  <p class="thank-you-msg" id="thank-you">
+    Thank you… I’ll spend every day proving this was worth it 🌹
+  </p>
+
+  <p style="margin-top:10px; font-size:0.9rem; color:#9a6672;">
+    (This page… is just a small part of how much you mean to me)
+  </p>
+
+</section>
+
+<script>
+function handleForgive(){
+  document.getElementById("thank-you").style.display="block";
+}
+</script>
+
+</body>
+</html>
